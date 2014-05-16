@@ -1,0 +1,24 @@
+
+Compilation Instructions:
+-------------------------
+
+run 'make' in the terminal
+
+This will compile the following binary deliverables:
+
+binder 
+librpc.a 
+
+rpc.h can be accessed by including it from 'rpc_src/rpc.h'
+
+Dependencies:
+-------------
+Most of the necessary libraries the implementation depends on are standard C++ libraries which require no extra steps when compiling the programs
+
+However, the librpc.a library depends on pthreads which can be included at the linking phase with the compiler flag '-lpthread' as the following:
+
+---
+g++ -L. client.o -lrpc -lpthread -o client
+g++ -L. server_functions.o server_function_skels.o server.o -lrpc -lpthread -o server
+---
+Once everything is compiled, the programs can be executed as described in the assignment specifications
